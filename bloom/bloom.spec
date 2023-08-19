@@ -42,6 +42,8 @@ Debugger for AVR-based embedded systems
 %cmake_install
 mkdir -p %{buildroot}/usr/share
 mv %{buildroot}/usr/resources %{buildroot}/usr/share/bloom
+# Fix paths in the mapping file
+sed -i 's|..\\/resources\\/|..\\/share\\/bloom\\/|' %{buildroot}/usr/share/bloom/TargetDescriptionFiles/AVR/Mapping.json
 
 %files
 %dir "/usr/share/bloom"
