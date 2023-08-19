@@ -9,7 +9,7 @@ URL:            http://www.sourceware.org/gdb/
 
 %global tarname gdb-%{version}
 
-Source:         http://sourceware.org/pub/gdb/releases/%{tarname}.tar.xz
+Source:         https://sourceware.org/pub/gdb/releases/%{tarname}.tar.xz
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
