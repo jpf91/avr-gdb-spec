@@ -16,9 +16,9 @@ BuildRequires:  gcc-c++
 BuildRequires:  ncurses-devel
 BuildRequires:  zlib-devel
 BuildRequires:  texinfo
-BuildRequires:  make gmp-devel expat-devel xz-devel guile-devel mpfr-devel python-devel zlib-devel
+BuildRequires:  make gmp-devel expat-devel xz-devel mpfr-devel python-devel zlib-devel
 
-Requires: expat xz guile mpfr python zlib
+Requires: expat xz mpfr python zlib
 
 Provides: bundled(libiberty)
 
@@ -39,7 +39,7 @@ pushd build
 CFLAGS="$RPM_OPT_FLAGS -D_GNU_SOURCE" \
   ../gdb-%{version}/configure --prefix=%{_prefix} \
   --libdir=%{_libdir} --mandir=%{_mandir} --infodir=%{_infodir} \
-  --target=%{target} --disable-werror \
+  --target=%{target} --disable-nls --disable-werror \
   --disable-rpath \
   --with-system-zlib
 make %{?_smp_mflags}
@@ -59,9 +59,6 @@ rm    $RPM_BUILD_ROOT%{_libdir}/libavr-sim.a
 
 # no need for devel files
 rm -rf $RPM_BUILD_ROOT%{_includedir}
-
-# Clashes with other packages
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/
 
 %files
 %doc gdb-%{version}/COPYING* gdb-%{version}/README*
