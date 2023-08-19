@@ -16,8 +16,9 @@ BuildRequires:  gcc-c++
 BuildRequires:  ncurses-devel
 BuildRequires:  zlib-devel
 BuildRequires:  texinfo
-BuildRequires:  make gmp-devel
+BuildRequires:  make gmp-devel expat-devel xz-devel guile-devel mpfr-devel python-devel zlib-devel
 
+Requires: expat xz guile mpfr python zlib
 
 Provides: bundled(libiberty)
 
@@ -38,7 +39,7 @@ pushd build
 CFLAGS="$RPM_OPT_FLAGS -D_GNU_SOURCE" \
   ../gdb-%{version}/configure --prefix=%{_prefix} \
   --libdir=%{_libdir} --mandir=%{_mandir} --infodir=%{_infodir} \
-  --target=%{target} --disable-nls --disable-werror \
+  --target=%{target} --disable-werror \
   --disable-rpath \
   --with-system-zlib
 make %{?_smp_mflags}
