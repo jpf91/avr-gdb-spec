@@ -1,0 +1,42 @@
+diff -urN Bloom-0.12.3/src/DebugServer/Gdb/GdbDebugServerConfig.hpp Bloom-0.12.3.new/src/DebugServer/Gdb/GdbDebugServerConfig.hpp
+--- Bloom-0.12.3/src/DebugServer/Gdb/GdbDebugServerConfig.hpp	2023-07-18 23:41:52.000000000 +0200
++++ Bloom-0.12.3.new/src/DebugServer/Gdb/GdbDebugServerConfig.hpp	2023-08-19 13:08:37.120567697 +0200
+@@ -1,5 +1,6 @@
+ #pragma once
+ 
++#include <cstdint>
+ #include "src/ProjectConfig.hpp"
+ 
+ namespace Bloom::DebugServer::Gdb
+diff -urN Bloom-0.12.3/src/DebugToolDrivers/Protocols/CMSIS-DAP/VendorSpecific/EDBG/AVR/AvrEvent.cpp Bloom-0.12.3.new/src/DebugToolDrivers/Protocols/CMSIS-DAP/VendorSpecific/EDBG/AVR/AvrEvent.cpp
+--- Bloom-0.12.3/src/DebugToolDrivers/Protocols/CMSIS-DAP/VendorSpecific/EDBG/AVR/AvrEvent.cpp	2023-07-18 23:41:52.000000000 +0200
++++ Bloom-0.12.3.new/src/DebugToolDrivers/Protocols/CMSIS-DAP/VendorSpecific/EDBG/AVR/AvrEvent.cpp	2023-08-19 13:02:52.358133561 +0200
+@@ -1,4 +1,5 @@
+ #include "AvrEvent.hpp"
++#include <cstdint>
+ 
+ #include "src/Exceptions/Exception.hpp"
+ 
+diff -urN Bloom-0.12.3/src/Helpers/Thread.hpp Bloom-0.12.3.new/src/Helpers/Thread.hpp
+--- Bloom-0.12.3/src/Helpers/Thread.hpp	2023-07-18 23:41:52.000000000 +0200
++++ Bloom-0.12.3.new/src/Helpers/Thread.hpp	2023-08-19 12:55:42.967347303 +0200
+@@ -2,6 +2,7 @@
+ 
+ #include <csignal>
+ #include <cassert>
++#include <string>
+ 
+ #include "SyncSafe.hpp"
+ 
+diff -urN Bloom-0.12.3/src/Services/PathService.hpp Bloom-0.12.3.new/src/Services/PathService.hpp
+--- Bloom-0.12.3/src/Services/PathService.hpp	2023-07-18 23:41:52.000000000 +0200
++++ Bloom-0.12.3.new/src/Services/PathService.hpp	2023-08-19 14:07:27.187194324 +0200
+@@ -21,7 +21,7 @@
+          * @return
+          */
+         static std::string resourcesDirPath() {
+-            return PathService::applicationDirPath() + "/../resources/";
++            return "/usr/share/bloom/";
+         }
+ 
+         /**

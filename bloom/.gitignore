@@ -1,0 +1,3 @@
+*.src.rpm
+v*.tar.gz
+results_bloom/
