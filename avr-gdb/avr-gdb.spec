@@ -2,7 +2,7 @@
 
 Name:           %{target}-gdb
 Version:        13.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        GDB for (remote) debugging %{target} binaries
 License:        GPLv3+ and GPLv3+ with exceptions and GPLv2+ and GPLv2+ with exceptions and GPL+ and LGPLv2+ and LGPLv3+ and BSD and Public Domain and GFDL
 URL:            http://www.sourceware.org/gdb/
@@ -69,6 +69,9 @@ rm -rf $RPM_BUILD_ROOT%{_includedir}
 
 
 %changelog
+* Sat Aug 19 2023 Johannes Pfau <johannespfau@gmail.com> - 13.2-2
+- enable more features
+
 * Sat Aug 19 2023 Johannes Pfau <johannespfau@gmail.com> - 13.2-1
 - move to latest upstream release
 

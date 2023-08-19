@@ -1,6 +1,6 @@
 Name: bloom
 Version: 0.12.3
-Release: 1
+Release: 2%{?dist}
 Summary: Debugger for AVR-based embedded systems
 License: LGPL-3.0
 Url: https://bloom.oscillate.io
@@ -52,5 +52,7 @@ sed -i 's|..\\/resources\\/|..\\/share\\/bloom\\/|' %{buildroot}/usr/share/bloom
 "/usr/lib/udev/rules.d/99-bloom.rules"
 
 %changelog
+* Sat Aug 19 2023 Johannes Pfau <johannespfau@gmail.com> - 0.12.3-2
+- Working version
 * Sat Aug 19 2023 Johannes Pfau <johannespfau@gmail.com> - 0.12.3-1
 - Initial package build
