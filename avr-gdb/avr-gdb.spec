@@ -60,6 +60,9 @@ rm    $RPM_BUILD_ROOT%{_libdir}/libavr-sim.a
 # no need for devel files
 rm -rf $RPM_BUILD_ROOT%{_includedir}
 
+# Clashes with other packages
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/
+
 %files
 %doc gdb-%{version}/COPYING* gdb-%{version}/README*
 %{_bindir}/%{name}*
